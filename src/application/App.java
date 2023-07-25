@@ -11,19 +11,16 @@ public class App {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        // como os membros da minha classe nao sao staticos, e nescessario instanciar a
-        // minha classe
-
-        Calculator calc = new Calculator();
-
         System.out.println("Enter radius ");
         double radius = sc.nextDouble();
-        double c = calc.circuference(radius);
-        double v = calc.volume(radius);
+        // como os membro da minha classe são staticos, nao preciso instaciar a classe
+        // calculator
+        double c = Calculator.circuference(radius);
+        double v = Calculator.volume(radius);
 
         System.out.println("Circuference: " + String.format("%.2f%n", c));
         System.out.println("Volume: " + String.format("%.2f%n", v));
-        System.out.println("PI value: " + String.format("%.2f%n", calc.PI));
+        System.out.println("PI value: " + String.format("%.2f%n", Calculator.PI));
         sc.close();
     }
 
